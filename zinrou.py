@@ -28,7 +28,7 @@ async def on_message(message):
     global zinroulist
 
     if client.user != message.author:
-        elif message.content=="人狼ゲーム":
+        if message.content=="人狼ゲーム":
             channel=message.channel
             if channel in zinroulist:
                 await channel.send("既にゲームを始めているよ")
