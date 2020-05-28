@@ -12,7 +12,7 @@ import discord
 import regex
 
 # 自分のBotのアクセストークンに置き換えてください
-TOKEN = 'NzExNDUyMDEwODc2MjM5OTMy.XsDOhQ.hKGHOvuP2DDOnD59ZssB9A2bXDM'
+TOKEN = 'NzExNDUyMDEwODc2MjM5OTMy.Xs-a3A.LE0vaTF3hLsfLbLTkDMRhskXobc'
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
 
