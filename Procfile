@@ -1,1 +1,1 @@
-discordbot: python shemi.py
+discordbot: python zinrou.py
