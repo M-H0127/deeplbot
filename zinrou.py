@@ -15,9 +15,6 @@ TOKEN = 'NzExNDUyMDEwODc2MjM5OTMy.Xs-a3A.LE0vaTF3hLsfLbLTkDMRhskXobc'
 client = discord.Client()
 
 zinroulist=[]
-kinsilist=[]
-sibarilist=[]
-    
 
 
 
