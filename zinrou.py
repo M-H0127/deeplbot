@@ -15,7 +15,17 @@ TOKEN = 'NzExNDUyMDEwODc2MjM5OTMy.Xs-a3A.LE0vaTF3hLsfLbLTkDMRhskXobc'
 client = discord.Client()
 
 zinroulist=[]
-
+def mode(a):
+    b=collections.Counter(a)
+    c=[]
+    d=0
+    for i in b:
+        if b[i]>d:
+            d=b[i]
+            c=[i]
+        elif b[i]==d:
+            c+=[i]
+    return c
 
 
 @client.event
@@ -705,7 +715,7 @@ async def on_message(message):
                 for i in muraside:
                     await channel.send(f'{i.mention}さん！')
                     nickname=str(i.nick)
-                    
+
             else:
                 if channel not in zinroulist:
                     return
