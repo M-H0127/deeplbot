@@ -705,18 +705,7 @@ async def on_message(message):
                 for i in muraside:
                     await channel.send(f'{i.mention}さん！')
                     nickname=str(i.nick)
-                    if "タウタウマスター×" in nickname and "/" in nickname:
-                        username=i.name
-                        number=[i for i,x in enumerate(nickname) if x=='/']
-                        number=number[0]
-                        topname=nickname[:number]
-                        topname=nickpluss(topname)
-                        nickname=topname+'/'+username
-                        await i.edit(nick=nickname)
-                    else:
-                        if i.top_role<message.guild.me.top_role:
-                            b=i.name
-                            await i.edit(nick="タウタウマスター×1/"+b)
+                    
             else:
                 if channel not in zinroulist:
                     return
@@ -724,18 +713,7 @@ async def on_message(message):
                 for i in zinside:
                     await channel.send(f'{i.mention}さん！')
                     nickname=str(i.nick)
-                    if "タウタウマスター×" in nickname and "/" in nickname:
-                        username=i.name
-                        number=[i for i,x in enumerate(nickname) if x=='/']
-                        number=number[0]
-                        topname=nickname[:number]
-                        topname=nickpluss(topname)
-                        nickname=topname+'/'+username
-                        await i.edit(nick=nickname)
-                    else:
-                        if i.top_role<message.guild.me.top_role:
-                            b=i.name
-                            await i.edit(nick="タウタウマスター×1/"+b)
+                    
             zinroulist.remove(channel)
 
                     
