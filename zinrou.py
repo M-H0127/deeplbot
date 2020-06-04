@@ -27,10 +27,29 @@ def mode(a):
             c+=[i]
     return c
 
+def nickplus(a):
+    d=a.index('×')
+    e=int(a[d+1:])
+    e=e+1
+    a=a[0:d+1]
+    a=a+str(e)
+    return a
+
+def nickpluss(a):
+    d=a.index('×')
+    e=int(a[d+1:])
+    e=e+2
+    a=a[0:d+1]
+    a=a+str(e)
+    return a
+
+zinroumode=1
+
 
 @client.event
 async def on_message(message):
     global zinroulist
+    global zinroumode
 
     if client.user != message.author:
         if message.content=="人狼ゲーム":
@@ -715,7 +734,19 @@ async def on_message(message):
                 for i in muraside:
                     await channel.send(f'{i.mention}さん！')
                     nickname=str(i.nick)
-
+                    if zinroumode==1:
+                        if "まーやマスター×" in nickname and "/" in nickname:
+                            username=i.name
+                            number=[i for i,x in enumerate(nickname) if x=='/']
+                            number=number[0]
+                            topname=nickname[:number]
+                            topname=nickpluss(topname)
+                            nickname=topname+'/'+username
+                            await i.edit(nick=nickname)
+                        else:
+                            if i.top_role<message.guild.me.top_role:
+                                b=i.name
+                                await i.edit(nick="まーやマスター×1/"+b)
             else:
                 if channel not in zinroulist:
                     return
@@ -723,8 +754,34 @@ async def on_message(message):
                 for i in zinside:
                     await channel.send(f'{i.mention}さん！')
                     nickname=str(i.nick)
-                    
+                    if zinroumode==1:
+                        if "まーやマスター×" in nickname and "/" in nickname:
+                            username=i.name
+                            number=[i for i,x in enumerate(nickname) if x=='/']
+                            number=number[0]
+                            topname=nickname[:number]
+                            topname=nickpluss(topname)
+                            nickname=topname+'/'+username
+                            await i.edit(nick=nickname)
+                        else:
+                            if i.top_role<message.guild.me.top_role:
+                                b=i.name
+                                await i.edit(nick="まーやマスター×1/"+b)
             zinroulist.remove(channel)
+        elif message.content=="人狼モード":
+            channel=message.channel
+            m="人狼モードを選択してください\n0:マスター称号を付与しない人狼を行います\n1:マスター称号を付与する人狼を行います"
+            def check(m):
+                return m.content in ["0","1"] and m.channel==channel
+            await channel.send(m)
+            try:
+                msg=await client.wait_for('message',timeout=30,check=check)
+            except asyncio.TimeoutError:
+                await channel.send("時間切れです")
+                return
+            zinroumode=int(msg.content)
+            await channel.send("人狼モードを"+msg.content+"に変更完了")
+            
 
                     
         elif message.content=="人狼リセット":
