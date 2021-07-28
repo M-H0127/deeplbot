@@ -20,5 +20,7 @@ def deepl(text):
             break
         time.sleep(1)
     driver.quit
+    Outputtext=Outputtext.rstrip("\r\n")
+    Outputtext=Outputtext.replace("\r","\n")
     return Outputtext
 
