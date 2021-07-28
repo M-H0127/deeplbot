@@ -6,7 +6,8 @@ def deepl(text):
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     text=text.replace(".\r","あ")
-    text=text.replace("\n","")
+    text=text.replace(".\n","あ")
+    text=text.replace("\n"," ")
     text=text.replace("\r"," ")
     text=text.replace("あ",".\r")
     url="https://www.deepl.com/ja/translator#en/ja/"+text
