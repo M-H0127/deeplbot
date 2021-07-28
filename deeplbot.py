@@ -1,7 +1,7 @@
 import deepl2
 import discord
 import asyncio
-TOKEN = 'ODY5ODQwMzA3OTM0NjA5NDY4.YQED6g.fDP4m9ikrfFzleaG3abNlD2GRyY'
+TOKEN = 'ODY5ODQwMzA3OTM0NjA5NDY4.YQED6g.kCPks0f4flTWzqX4NKUIeOIkejc'
 client = discord.Client()
 @client.event
 async def on_message(message):
