@@ -19,6 +19,7 @@ def deepl(text):
             break
         elif i>30:
             Outputtext="翻訳不可能な言語です\r\n"
+            break
         time.sleep(1)
         i+=1
     driver.quit
