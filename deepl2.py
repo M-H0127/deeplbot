@@ -42,3 +42,8 @@ async def deepl(text):
     Outputtext=unescape(Outputtext)
     return Outputtext
 
+def main(text):
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(deepl(text))
+    Outputtext=deepl(text)
+    return Outputtext
