@@ -9,7 +9,20 @@ def deepl(text):
     url="https://www.deepl.com/ja/translator"
     driver =webdriver.Chrome(options=options)
     driver.get(url)
-    insec="#dl_translator > div.lmt__text > div.lmt__sides_container > div.lmt__side_container.lmt__side_container--source > div.lmt__textarea_container > div.lmt__inner_textarea_container > textarea"
+    i=0
+    while 1:
+        try:
+            insec="#dl_translator > div.lmt__text > div.lmt__sides_container > div.lmt__side_container.lmt__side_container--source > div.lmt__textarea_container > div.lmt__inner_textarea_container > textarea"
+        except selenium.common.exceptions.NoSuchElementException as e:
+            if i<10:
+                time.sleep(0.5)
+                i+=1
+            else:
+                return Outputtext="エラーが発生しました"
+        else:
+            break
+
+    
     driver.find_element_by_css_selector(insec).send_keys(text)
     selector="#target-dummydiv"
     i=1
