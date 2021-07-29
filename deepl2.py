@@ -5,7 +5,7 @@ from xml.sax.saxutils import unescape
 def deepl(text):
     print(text,"\n")
     options = webdriver.ChromeOptions()
-    #options.add_argument('--headless')
+    options.add_argument('--headless')
     text = ' '.join(text.splitlines())
     print(text)
     url="https://www.deepl.com/translator"
@@ -19,7 +19,7 @@ def deepl(text):
         if Outputtext != "\r\n" :
             break
         time.sleep(1)
-    #driver.quit
+    driver.quit
     Outputtext=Outputtext.rstrip("\r\n")
     Outputtext=unescape(Outputtext)
     return Outputtext
