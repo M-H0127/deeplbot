@@ -9,6 +9,7 @@ async def on_message(message):
     dm=await author.create_dm()
     if message.channel==dm:
         if __name__ == '__main__':
-            honyaku = deepl2.deepl(message.content)
+            loop = asyncio.get_event_loop()
+            honyaku=loop.run_until_complete(deepl2.deepl(message.content))
             await message.channel.send(honyaku)
 client.run(TOKEN)
