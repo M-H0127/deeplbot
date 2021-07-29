@@ -2,7 +2,7 @@ import time
 from selenium import webdriver
 import chromedriver_binary
 from xml.sax.saxutils import unescape
-import asynco
+import asyncio
 async def deepl(text):
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
