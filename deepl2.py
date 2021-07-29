@@ -2,7 +2,8 @@ import time
 from selenium import webdriver
 import chromedriver_binary
 from xml.sax.saxutils import unescape
-def deepl(text):
+import asynco
+async def deepl(text):
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     text = ' '.join(text.splitlines())
@@ -15,7 +16,7 @@ def deepl(text):
             insec="#dl_translator > div.lmt__text > div.lmt__sides_container > div.lmt__side_container.lmt__side_container--source > div.lmt__textarea_container > div.lmt__inner_textarea_container > textarea"
         except selenium.common.exceptions.NoSuchElementException as e:
             if i<10:
-                time.sleep(0.5)
+                await asyncio.sleep(0.5)
                 i+=1
             else:
                 Outputtext="エラーが発生しました"
@@ -34,7 +35,7 @@ def deepl(text):
         elif i>30:
             Outputtext="翻訳不可能な言語です\r\n"
             break
-        time.sleep(1)
+        await asyncio.sleep(1)
         i+=1
     driver.quit
     Outputtext=Outputtext.rstrip("\r\n")
