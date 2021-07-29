@@ -13,6 +13,6 @@ async def on_message(message):
     dm=await author.create_dm()
     text=message.content
     if message.channel==dm:
-        honyaku = deepl2.deepl(pyperclip.paste())
+        honyaku = deepl2.deepl(text)
         await message.channel.send(honyaku)
 client.run(TOKEN)
