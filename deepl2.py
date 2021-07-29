@@ -3,7 +3,7 @@ from selenium import webdriver
 import chromedriver_binary
 from xml.sax.saxutils import unescape
 import asyncio
-async def deepl(text):
+def deepl(text):
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     text = ' '.join(text.splitlines())
@@ -40,10 +40,4 @@ async def deepl(text):
     driver.quit
     Outputtext=Outputtext.rstrip("\r\n")
     Outputtext=unescape(Outputtext)
-    return Outputtext
-
-def main(text):
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(deepl(text))
-    Outputtext=deepl(text)
     return Outputtext
