@@ -3,11 +3,9 @@ from selenium import webdriver
 import chromedriver_binary
 from xml.sax.saxutils import unescape
 def deepl(text):
-    print(text,"\n")
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     text = ' '.join(text.splitlines())
-    print(text)
     url="https://www.deepl.com/ja/translator"
     driver =webdriver.Chrome(options=options)
     driver.get(url)
