@@ -18,7 +18,8 @@ def deepl(text):
                 time.sleep(0.5)
                 i+=1
             else:
-                return Outputtext="エラーが発生しました"
+                Outputtext="エラーが発生しました"
+                return Outputtext
         else:
             break
 
