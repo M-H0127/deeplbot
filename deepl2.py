@@ -8,7 +8,7 @@ def deepl(text):
     options.add_argument('--headless')
     text = ' '.join(text.splitlines())
     print(text)
-    url="https://www.deepl.com/translator"
+    url="https://www.deepl.com/ja/translator"
     driver =webdriver.Chrome(options=options)
     driver.get(url)
     insec="#dl_translator > div.lmt__text > div.lmt__sides_container > div.lmt__side_container.lmt__side_container--source > div.lmt__textarea_container > div.lmt__inner_textarea_container > textarea"
