@@ -52,7 +52,7 @@ async def on_message(message):
         await channel.send("起動中")
 
         options = webdriver.ChromeOptions()
-        #options.add_argument('--headless')
+        options.add_argument('--headless')
         url="https://www.deepl.com/ja/translator"
         driver =webdriver.Chrome(options=options)
         driver.get(url)
