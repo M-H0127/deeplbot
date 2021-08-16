@@ -56,6 +56,7 @@ async def on_message(message):
         url="https://www.deepl.com/ja/translator"
         driver =webdriver.Chrome(options=options)
         driver.get(url)
+        await asyncio.sleep(0.5)
         m="翻訳文を入力"
         def check(m):
             return m.content!=""
