@@ -7,9 +7,13 @@ from xml.sax.saxutils import unescape
 TOKEN = 'ODY5ODQwMzA3OTM0NjA5NDY4.YQED6g.Itpfh-oSeP989MH9UiaFLA6hSzc'
 client = discord.Client()
 mode=[]
-
-def deepl(text,driver):
+def split(text):
+    text.replace(".\r\n","あ")
     text = ' '.join(text.splitlines())
+    text.replace("あ",".\r\n")
+    return text
+def deepl(text,driver):
+    text = split(text)
     i=0
     while 1:
         try:
