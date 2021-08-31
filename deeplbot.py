@@ -86,7 +86,7 @@ async def on_message(message):
             def check(m):
                 return m.author!=client.user and m.content=="y" or m.content=="n"
             try:
-                msg=await client.wait_for('message',timeout=60,check=check)
+                msg=await client.wait_for('message',timeout=3600,check=check)
             except asyncio.TimeoutError:
                 await channel.send("操作が見られなかったため中断します")
                 break
