@@ -30,7 +30,7 @@ def deepl(text,driver):
             break
     try:
         driver.find_element_by_css_selector(insec).send_keys(text)
-    except selenium.common.exceptions.WebDriverException as e:
+    except unknown error as e:
         outputtext="エラーが発生しました"
         return outputtext
     selector="#dl_translator > div.lmt__text > div.lmt__sides_container > div.lmt__side_container.lmt__side_container--target > div.lmt__textarea_container > div.lmt__inner_textarea_container > textarea"
