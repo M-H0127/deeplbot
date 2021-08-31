@@ -1,4 +1,4 @@
-import discord
+import discord.py
 import asyncio
 import time
 from selenium import webdriver
