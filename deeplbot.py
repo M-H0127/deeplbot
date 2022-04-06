@@ -4,7 +4,7 @@ import time
 from selenium import webdriver
 import chromedriver_binary
 from xml.sax.saxutils import unescape
-TOKEN = 'ODY5ODQwMzA3OTM0NjA5NDY4.YQED6g.Itpfh-oSeP989MH9UiaFLA6hSzc'
+TOKEN = 'write your Token'
 
 client = discord.Client()
 mode=[]
